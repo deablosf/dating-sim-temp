@@ -1,6 +1,6 @@
 Things to build next 
-A functions to change background
-Function to bring up options
+A functions to change background(Done)
+Function to bring up options(DONE)
 Function to change brightness
 Text adventure place to place.
 
