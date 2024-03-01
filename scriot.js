@@ -9,6 +9,8 @@ const optionButtonsElement = document.getElementById('optionsBox')
 
 const optionsButton = () => {
     alert("Option Button is responding")
+    let divBox = document.createElement('div');
+    divBox.innerHTML = ("<button id='closeOp' onclick=''>X</button> <button onclick=''>Bright Up</button> <button onclick=''>Bright Down</button>")
 };
 
 const nextButton = () => {
@@ -52,7 +54,7 @@ let avatarChange = (x) => {
 
 let state = {
     currentRoom: '',
-    attackBtn: 1,
+    brightNess: 100,
     skillFlap: 1,
     itemFlap: 1
 }
