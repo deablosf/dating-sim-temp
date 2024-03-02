@@ -56,7 +56,8 @@ let state = {
     currentRoom: '',
     brightNess: 100,
     skillFlap: 1,
-    itemFlap: 1
+    itemFlap: 1,
+    darnell: 1
 }
 
 let charConvoNode = (convoNodeIndex) => {
@@ -117,6 +118,19 @@ const selectOption = (option) => {
     state = Object.assign(state, option.setState)
     showTextNode(nextTextNodeId)
 }
+
+let darnell = [
+    {
+        id:1
+    },
+    {
+        id:2
+    },
+    {
+        id:3
+    }
+
+]
 
 let textNodes = [
     {
