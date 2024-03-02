@@ -59,6 +59,28 @@ let state = {
     itemFlap: 1
 }
 
+let charConvoNode = (convoNodeIndex) => {
+    const convoNode = convoNodes.find(convoNode => convoNode.id === convoNodeIndex)
+    textElement.innerText = convoNode.text;
+    while (optionButtonsElement.firstChild){
+        optionButtonsElement.removeChild(optionButtonsElement.firstChild)
+    }
+
+    textNode.options.forEach(option => {
+        if (showOption(option)) {
+            const button = document.createElement('button')
+            button.innerText = option.text
+            button.classList.add('btn')
+            button.addEventListener('click', () => selectOption(option))
+            optionButtonsElement.appendChild(button)
+        }
+    })
+
+    if (textNode.sideEffect) {
+        textNode.sideEffect();
+    }
+}
+
 let showTextNode = (textNodeIndex) => {
     const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
     textElement.innerText = textNode.text;
