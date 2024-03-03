@@ -310,6 +310,10 @@ let textNodes = [
             {
                 text: "Restart",
                 nextText: 1
+            },
+            {
+                text: "Leave the School",
+                nextText: 3
             }
         ]
     }
