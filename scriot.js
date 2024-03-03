@@ -60,14 +60,14 @@ let state = {
     darnell: 1
 }
 
-let charConvoNode = (convoNodeIndex) => {
-    const convoNode = convoNodes.find(convoNode => convoNode.id === convoNodeIndex)
+let charConvoNode = (character, convoNodeIndex) => {
+    const convoNode = character.find(convoNode => convoNode.id === convoNodeIndex)
     textElement.innerText = convoNode.text;
     while (optionButtonsElement.firstChild){
         optionButtonsElement.removeChild(optionButtonsElement.firstChild)
     }
 
-    textNode.options.forEach(option => {
+    convoNode.options.forEach(option => {
         if (showOption(option)) {
             const button = document.createElement('button')
             button.innerText = option.text
@@ -77,8 +77,14 @@ let charConvoNode = (convoNodeIndex) => {
         }
     })
 
-    if (textNode.sideEffect) {
-        textNode.sideEffect();
+    if (convoNode.sideEffect) {
+        convoNode.sideEffect();
+    }
+}
+
+let convoStart = (character, index) => {
+    if (state.character == 1) {
+        charConvoNode(character,index)
     }
 }
 
@@ -121,13 +127,38 @@ const selectOption = (option) => {
 
 let darnell = [
     {
-        id:1
+        id:1,
+        text: "Hey there friend.",
+        option: [
+            {
+                text: "Hello?",
+                nextText: 2
+            },
+            {
+                text: "I'm not your friend,guy.",
+                nextText: 2
+            },
+            {
+                text: "...(silence)",
+                nextText: 3
+            }
+        ]
     },
     {
-        id:2
+        id:2,
+        text: "You're new here, aren't you? And no has told you anything about me ... Perfect!",
+        sideEffect: () => {
+
+        },
+        option: []
     },
     {
-        id:3
+        id:3,
+        text: "o-kay ... (leaves)",
+        sideEffect: () => {
+
+        },
+        option: []
     }
 
 ]
@@ -186,7 +217,8 @@ let textNodes = [
         text: "Sup Friend!",
         sideEffect: () => {
             backGroundChange(4);
-            avatarChange(1)
+            avatarChange(1);
+            convoStart(darnell, 1)
         },
         options: [
             {
