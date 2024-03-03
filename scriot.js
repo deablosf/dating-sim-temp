@@ -75,7 +75,7 @@ let charConvoNode = (character, convoNodeIndex) => {
             const button = document.createElement('button')
             button.innerText = option.text
             button.classList.add('btn')
-            button.addEventListener('click', () => convoOption(option))
+            button.addEventListener('click', () => convoOption(option, character))
             optionButtonsElement.appendChild(button)
         }
     })
@@ -85,20 +85,27 @@ let charConvoNode = (character, convoNodeIndex) => {
     }
 }
 
-const convoOption = (option) => {
+const convoOption = (option, character) => {
     const nextTextNodeId = option.nextText
     if (nextTextNodeId <= 0) {
         return startGame()
     }
     state.currentConvo = nextTextNodeId;
     state = Object.assign(state, option.setState)
-    showTextNode(nextTextNodeId)
+    charConvoNode(character, nextTextNodeId)
 }
 
 let convoStart = (x, index) => {
     if (state[x] === 1) {
         charConvoNode(eval(x),index)
     }
+}
+
+let endConvo = (character, currentRoom) => {
+    state[character] = 2;
+    avatarChange(0);
+    showTextNode(currentRoom);
+    console.log (state[character], currentRoom)
 }
 
 let showTextNode = (textNodeIndex) => {
@@ -142,6 +149,9 @@ let darnell = [
     {
         id:1,
         text: "Hey there friend.",
+        sideEffect: () => {
+            avatarChange(1);
+        },
         options: [
             {
                 text: "Hello?",
@@ -163,13 +173,31 @@ let darnell = [
         sideEffect: () => {
 
         },
-        options: []
+        options: [
+            {
+                text: "End Conversation",
+                nextText: 4
+            }
+        ]
     },
     {
         id:3,
         text: "o-kay ... (leaves)",
         sideEffect: () => {
 
+        },
+        options: [
+            {
+                text: "End Conversation",
+                nextText: 4
+            }
+        ]
+    },
+    {
+        id:4,
+        text: "",
+        sideEffect: () => {
+            endConvo("darnell", state.currentRoom)
         },
         options: []
     }
@@ -227,10 +255,9 @@ let textNodes = [
     },
     {
         id: 4,
-        text: "",
+        text: "In class again, nothing new here.",
         sideEffect: () => {
             backGroundChange(4);
-            avatarChange(1);
             // x = "darnell"
             convoStart("darnell", 1)
         },
