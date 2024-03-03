@@ -44,7 +44,13 @@ let backGroundChange = (x) => {
         case 4:
             backGround.style.backgroundImage = "url('/assets/wp4720761.jpg')";
             break;
-    }
+        case 5:
+            backGround.style.backgroundImage = "url('/assets/BG-shop-ext1layout2FLATcontrast_1340_c.png')";
+            break;
+        case 6:
+            backGround.style.backgroundImage = "url('/assets/BG-shop-int1layout2flat_1750.png')";
+            break;
+    }  
 }
 
 let avatarChange = (x) => {
