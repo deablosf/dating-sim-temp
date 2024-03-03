@@ -178,7 +178,7 @@ let darnell = [ {
     },
     {
         id:2,
-        text: "You're new here, aren't you? And no has told you anything about me ... Perfect!",
+        text: "You're new here, aren't you? And no one has told you anything about me ... Perfect!",
         sideEffect: () => {
 
         },
