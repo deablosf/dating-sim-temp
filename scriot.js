@@ -1,20 +1,30 @@
-// -----HTML ELEMENTS -----
+// -----HTML ELEMENTS Get List-----
 
-let backGround = document.getElementById("main");
-let avatar = document.getElementById("avatar");
-let nameTag = document.getElementById("nameTag")
-let miniChatter = document.getElementById("miniChatter");
+const backGround = document.getElementById("main");
+const avatar = document.getElementById("avatar");
+const nameTag = document.getElementById("nameTag")
+const miniChatter = document.getElementById("miniChatter");
 const textElement = document.getElementById('text');
 const optionButtonsElement = document.getElementById('optionsBox')
+
+// ------- STATES of World, Player and NPCs-------
+
+let state = {
+    currentRoom: '',
+    currentConvo: '',
+    brightNess: 100,
+    skillFlap: 1,
+    itemFlap: 1,
+    darnell: 1,
+    Chrissy: 2
+};
+
+// Image and audio asset changerfunctions
 
 const optionsButton = () => {
     alert("Option Button is responding")
     let divBox = document.createElement('div');
     divBox.innerHTML = ("<button id='closeOp' onclick=''>X</button> <button onclick=''>Bright Up</button> <button onclick=''>Bright Down</button>")
-};
-
-const nextButton = () => {
-    alert("NEXT BUTTON IS WORKING!")
 };
 
 let backGroundChange = (x) => {
@@ -52,15 +62,6 @@ let avatarChange = (x) => {
     }
 }
 
-let state = {
-    currentRoom: '',
-    currentConvo: '',
-    brightNess: 100,
-    skillFlap: 1,
-    itemFlap: 1,
-    darnell: 1,
-    Chrissy: 2
-}
 
 let charConvoNode = (character, convoNodeIndex) => {
     console.log(character.find(convoNode => convoNode.id === convoNodeIndex))
