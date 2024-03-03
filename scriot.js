@@ -270,9 +270,9 @@ let textNodes = [
     },
     {
         id: 4,
-        text: "The bakery and a small grouping of other family owned stores",
+        text: "The ice cream shop and a small grouping of other family owned stores",
         sideEffect: () => {
-
+            backGroundChange(5);
         },
         options: [
             {
@@ -280,16 +280,16 @@ let textNodes = [
                 nextText: 3
             },
             {
-                text: "go into the bakery",
+                text: "go into Two Scoops",
                 nextText: 5
             }
         ]
     },
     {
         id: 5,
-        text: "The smell of baked goods always makes you hungry",
+        text: "The smell of frozen sugar and cream! Maybe you have time for taste...",
         sideEffect: () => {
-
+            backGroundChange(6);
         },
         options: [
             {
