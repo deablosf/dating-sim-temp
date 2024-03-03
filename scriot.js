@@ -19,7 +19,7 @@ let state = {
     Chrissy: 2
 };
 
-// Image and audio asset changerfunctions
+// ------- Image and audio asset changerfunctions--------
 
 const optionsButton = () => {
     alert("Option Button is responding")
@@ -62,6 +62,7 @@ let avatarChange = (x) => {
     }
 }
 
+// ------- Conversation Functions -------
 
 let charConvoNode = (character, convoNodeIndex) => {
     console.log(character.find(convoNode => convoNode.id === convoNodeIndex))
@@ -109,6 +110,8 @@ let endConvo = (character, currentRoom) => {
     console.log (state[character], currentRoom)
 }
 
+// ------- World travelling function -------
+
 let showTextNode = (textNodeIndex) => {
     const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
     textElement.innerText = textNode.text;
@@ -146,8 +149,7 @@ const selectOption = (option) => {
     showTextNode(nextTextNodeId)
 }
 
-let darnell = [
-    {
+let darnell = [ {
         id:1,
         text: "Hey there friend.",
         sideEffect: () => {
@@ -205,6 +207,8 @@ let darnell = [
 
 ]
 
+// ------- World At Large -------
+
 let textNodes = [
     {
         id: 1,
@@ -249,13 +253,47 @@ let textNodes = [
                 nextText: 2
             },
             {
-                text: "Go to school",
+                text: "Go to the shops",
                 nextText: 4
+            },
+            {
+                text: "Go to school",
+                nextText: 6
             }
         ]
     },
     {
         id: 4,
+        text: "The bakery and a small grouping of other family owned stores",
+        sideEffect: () => {
+
+        },
+        options: [
+            {
+                text: "go back to the main street",
+                nextText: 3
+            },
+            {
+                text: "go into the bakery",
+                nextText: 5
+            }
+        ]
+    },
+    {
+        id: 5,
+        text: "The smell of baked goods always makes you hungry",
+        sideEffect: () => {
+
+        },
+        options: [
+            {
+                text: "leave the bakery",
+                nextText: 4
+            }
+        ]
+    },
+    {
+        id: 6,
         text: "In class again, nothing new here.",
         sideEffect: () => {
             backGroundChange(4);
