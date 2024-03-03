@@ -57,10 +57,12 @@ let state = {
     brightNess: 100,
     skillFlap: 1,
     itemFlap: 1,
-    darnell: 1
+    darnell: 1,
+    Chrissy: 2
 }
 
 let charConvoNode = (character, convoNodeIndex) => {
+    console.log(character.find(convoNode => convoNode.id === convoNodeIndex))
     const convoNode = character.find(convoNode => convoNode.id === convoNodeIndex)
     textElement.innerText = convoNode.text;
     while (optionButtonsElement.firstChild){
@@ -82,9 +84,9 @@ let charConvoNode = (character, convoNodeIndex) => {
     }
 }
 
-let convoStart = (character, index) => {
-    if (state.character == 1) {
-        charConvoNode(character,index)
+let convoStart = (x, index) => {
+    if (state[x] === 1) {
+        charConvoNode(eval(x),index)
     }
 }
 
@@ -129,7 +131,7 @@ let darnell = [
     {
         id:1,
         text: "Hey there friend.",
-        option: [
+        options: [
             {
                 text: "Hello?",
                 nextText: 2
@@ -150,7 +152,7 @@ let darnell = [
         sideEffect: () => {
 
         },
-        option: []
+        options: []
     },
     {
         id:3,
@@ -158,7 +160,7 @@ let darnell = [
         sideEffect: () => {
 
         },
-        option: []
+        options: []
     }
 
 ]
@@ -214,11 +216,12 @@ let textNodes = [
     },
     {
         id: 4,
-        text: "Sup Friend!",
+        text: "",
         sideEffect: () => {
             backGroundChange(4);
             avatarChange(1);
-            convoStart(darnell, 1)
+            // x = "darnell"
+            convoStart("darnell", 1)
         },
         options: [
             {
