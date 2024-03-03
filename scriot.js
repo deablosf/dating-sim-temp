@@ -54,6 +54,7 @@ let avatarChange = (x) => {
 
 let state = {
     currentRoom: '',
+    currentConvo: '',
     brightNess: 100,
     skillFlap: 1,
     itemFlap: 1,
@@ -74,7 +75,7 @@ let charConvoNode = (character, convoNodeIndex) => {
             const button = document.createElement('button')
             button.innerText = option.text
             button.classList.add('btn')
-            button.addEventListener('click', () => selectOption(option))
+            button.addEventListener('click', () => convoOption(option))
             optionButtonsElement.appendChild(button)
         }
     })
@@ -82,6 +83,16 @@ let charConvoNode = (character, convoNodeIndex) => {
     if (convoNode.sideEffect) {
         convoNode.sideEffect();
     }
+}
+
+const convoOption = (option) => {
+    const nextTextNodeId = option.nextText
+    if (nextTextNodeId <= 0) {
+        return startGame()
+    }
+    state.currentConvo = nextTextNodeId;
+    state = Object.assign(state, option.setState)
+    showTextNode(nextTextNodeId)
 }
 
 let convoStart = (x, index) => {
