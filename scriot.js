@@ -293,7 +293,7 @@ let textNodes = [
         },
         options: [
             {
-                text: "leave the bakery",
+                text: "leave Two Scoops",
                 nextText: 4
             }
         ]
