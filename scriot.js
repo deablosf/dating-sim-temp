@@ -13,7 +13,7 @@ let state = {
     currentRoom: '',
     currentConvo: '',
     brightNess: 100,
-    skillFlap: 1,
+    day: 1,
     itemFlap: 1,
     darnell: 1,
     Chrissy: 2
@@ -43,8 +43,8 @@ let mainCharacter = {
     ],
 }
 
-let npcDarell = {
-    name: "Darnnell",
+let npcDarnell = {
+    name: "Darnell",
     age: 20,
     Allure: 0,
     presence: 0,
@@ -101,7 +101,7 @@ let npcChrissy = {
     ]
 }
 
-// ------- Image and audio asset changerfunctions--------
+// ------- Image and audio asset changer functions--------
 
 const optionsButton = () => {
     alert("Option Button is responding")
