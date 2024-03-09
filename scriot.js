@@ -43,6 +43,9 @@ let npcDarell = {
     presence: 0,
     empathy: 0,
     appeal: 0,
+    recovery: 0,
+    tolerance: 0,
+    health: 0,
     emotions:[
         {
             anger: 0,
@@ -69,6 +72,9 @@ let npcChrissy = {
     presence: 0,
     empathy: 0,
     appeal: 0,
+    recovery: 0,
+    tolerance: 0,
+    health: 0,
     emotions:[
         {
             anger: 0,
