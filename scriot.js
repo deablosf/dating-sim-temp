@@ -22,6 +22,13 @@ let state = {
 let mainCharacter = {
     name: "",
     age: 0,
+    Allure: 0,
+    presence: 0,
+    empathy: 0,
+    appeal: 0,
+    recovery: 0,
+    tolerance: 0,
+    health: 0,
     emotions:[
         {
             anger: 0,
