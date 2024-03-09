@@ -22,13 +22,40 @@ let state = {
 let npcDarell = {
     name: "Darnnell",
     age: 20,
-
+    emotions:[
+        {
+            anger: 0,
+            fear: 0,
+            sadness: 0,
+            boredom: 0,
+            joy: 0,
+            interest: 0,
+            surprise: 0,
+            acceptance: 0
+        }
+    ],
+    commitments: [
+        {
+            darnell: 0
+        }
+    ]
 }
 
 let npcChrissy = {
     name: "Chrissy",
     age: 20,
-    
+    emotions:[
+        {
+            anger: 0,
+            fear: 0,
+            sadness: 0,
+            boredom: 0,
+            joy: 0,
+            interest: 0,
+            surprise: 0,
+            acceptance: 0
+        }
+    ]
 }
 
 // ------- Image and audio asset changerfunctions--------
