@@ -19,6 +19,18 @@ let state = {
     Chrissy: 2
 };
 
+let npcDarell = {
+    name: "Darnnell",
+    age: 20,
+
+}
+
+let npcChrissy = {
+    name: "Chrissy",
+    age: 20,
+    
+}
+
 // ------- Image and audio asset changerfunctions--------
 
 const optionsButton = () => {
