@@ -39,6 +39,10 @@ let mainCharacter = {
 let npcDarell = {
     name: "Darnnell",
     age: 20,
+    Allure: 0,
+    presence: 0,
+    empathy: 0,
+    appeal: 0,
     emotions:[
         {
             anger: 0,
@@ -61,6 +65,10 @@ let npcDarell = {
 let npcChrissy = {
     name: "Chrissy",
     age: 20,
+    Allure: 0,
+    presence: 0,
+    empathy: 0,
+    appeal: 0,
     emotions:[
         {
             anger: 0,
