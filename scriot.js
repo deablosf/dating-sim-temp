@@ -153,6 +153,12 @@ let avatarChange = (x) => {
     }
 }
 
+let dayShift = () => {
+    for (let i = 2; i < 9; i++) {
+
+    }
+}
+
 // ------- Conversation Functions -------
 
 let charConvoNode = (character, convoNodeIndex) => {
