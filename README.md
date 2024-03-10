@@ -5,7 +5,7 @@ Text adventure place to place.(DONE)
 Function to change brightness
 Set up a NPC with lowgrade stats.
 Build NPC interaction.(DONE)
-
+Add a day cycle
 
 Darnal: Don't hurry about who I am! I'm a guy with a talking Snake!
 Snake: Colonel~!

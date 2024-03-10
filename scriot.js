@@ -1,13 +1,16 @@
 // -----HTML ELEMENTS Get List-----
+//---------
 
 const backGround = document.getElementById("main");
 const avatar = document.getElementById("avatar");
-const nameTag = document.getElementById("nameTag")
+const nameTag = document.getElementById("nameTag");
 const miniChatter = document.getElementById("miniChatter");
 const textElement = document.getElementById('text');
-const optionButtonsElement = document.getElementById('optionsBox')
+const optionButtonsElement = document.getElementById('optionsBox');
 
+// ------------
 // ------- STATES of World, Player and NPCs-------
+//-------------
 
 let state = {
     currentRoom: '',
