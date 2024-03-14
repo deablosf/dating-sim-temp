@@ -154,9 +154,9 @@ let avatarChange = (x) => {
 }
 
 let dayShift = () => {
-    for (let i = 2; i < 9; i++) {
-
-    }
+    state.day += 1;
+    avatar.innerHTML = "<div class='dayDisplay'>Day " + `${state.day}` + "</div>";
+    
 }
 
 // ------- Conversation Functions -------
