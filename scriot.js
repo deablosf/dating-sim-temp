@@ -1,6 +1,7 @@
 // -----HTML ELEMENTS Get List-----
 //---------
 
+const body = document.getElementById("body")
 const backGround = document.getElementById("main");
 const avatar = document.getElementById("avatar");
 const nameTag = document.getElementById("nameTag");
@@ -112,6 +113,16 @@ const optionsButton = () => {
     divBox.innerHTML = ("<button id='closeOp' onclick=''>X</button> <button onclick=''>Bright Up</button> <button onclick=''>Bright Down</button>")
 };
 
+let theBed = document.createElement("div");
+theBed.className = "bed";
+theBed.setAttribute("id", "bed")
+theBed.setAttribute("onclick", "dayShift()")
+
+let killBed = () => {
+    const killer = document.getElementById("bed");
+    killer.remove()
+}
+
 let backGroundChange = (x) => {
     switch (x) {
         case 0:
@@ -119,6 +130,7 @@ let backGroundChange = (x) => {
             break;
         case 1:
             backGround.style.backgroundImage = "url('/assets/paolo-villavicencio-s03-b01-bg05-color-night.jpg')";
+            backGround.insertBefore(theBed, backGround.firstChild)
             break;
         case 2:
             backGround.style.backgroundImage = "url('/assets/a5d6f8fdf79594938476aef866c3d69dd2a03bee.jpeg')";
@@ -155,9 +167,9 @@ let avatarChange = (x) => {
 
 let dayShift = () => {
     state.day += 1;
-    avatar.innerHTML = "<div class='dayDisplay'>Day " + `${state.day}` + "</div>";
+    avatar.innerText = "DAY " + state.day;
     setTimeout(()=> {
-        avatar.innerHTML = "";
+        avatar.innerText = "";
      }
      ,3000);
 }
@@ -329,6 +341,7 @@ let textNodes = [
         text: "Kitchen, stocked with all the things one needs to fight hunger.",
         sideEffect: () => {
             backGroundChange(2);
+            killBed()
         },
         options: [
             {
@@ -397,7 +410,6 @@ let textNodes = [
         text: "In class again, nothing new here.",
         sideEffect: () => {
             backGroundChange(4);
-            // x = "darnell"
             convoStart("darnell", 1)
         },
         options: [
