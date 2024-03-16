@@ -7,5 +7,13 @@ Set up a NPC with lowgrade stats.
 Build NPC interaction.(DONE)
 Add a day cycle
 
-Darnal: Don't hurry about who I am! I'm a guy with a talking Snake!
-Snake: Colonel~!
+
+Brown boy's name is: Uteki
+Snake is: Tawfiq
+No picture yet: Xavi (MC)
+
+
+Xavi: I am aware you need assistance. Your snake helps you?
+Tawfiq: I do, he can use sign though if you would prefer.
+Xavi: Whatever he feels comfortable with, I want all students to feel safe.
+Uteki, signs: Thank you, Sensei
