@@ -4,6 +4,7 @@
 const body = document.getElementById("body")
 const backGround = document.getElementById("main");
 const avatar = document.getElementById("avatar");
+const miniAvatar = document.getElementById("miniAvatar")
 const nameTag = document.getElementById("nameTag");
 const miniChatter = document.getElementById("miniChatter");
 const textElement = document.getElementById('text');
@@ -19,8 +20,8 @@ let state = {
     brightNess: 100,
     day: 1,
     itemFlap: 1,
-    darnell: 1,
-    Chrissy: 2
+    uteki: 1,
+    chrissy: 2
 };
 
 let mainCharacter = {
@@ -160,8 +161,26 @@ let avatarChange = (x) => {
         case 1:
             avatar.style.backgroundImage = "url('/assets/download20240102024743.png')";
             nameTag.classList.add('chatter')
-            nameTag.innerText = "Darnell"
+            nameTag.innerText = "Uteki"
             break;
+        case 2:
+            avatar.style.backgroundImage = "url('')"
+            nameTag.classList.add('chatter')
+            nameTag.innerText = "Chrissy"
+            break;
+    }
+}
+
+let miniAvatarChange = (x) => {
+    switch (x) {
+        case 0:
+            miniAvatar.style.backgroundImage = "none";
+            miniChatter.innerText = "";
+            miniChatter,classList.remove('miniChatter');
+            break;
+        case 1:
+            miniAvatar.style.backgroundImage = "url('')";
+
     }
 }
 
@@ -261,58 +280,76 @@ const selectOption = (option) => {
     showTextNode(nextTextNodeId)
 }
 
-let darnell = [ {
+let uteki = [ {
         id:1,
-        text: "Hey there friend.",
+        text: ". . .",
         sideEffect: () => {
             avatarChange(1);
         },
         options: [
             {
-                text: "Hello?",
+                text: "Uteki, right?",
                 nextText: 2
-            },
-            {
-                text: "I'm not your friend,guy.",
-                nextText: 2
-            },
-            {
-                text: "...(silence)",
-                nextText: 3
             }
         ]
     },
     {
         id:2,
-        text: "You're new here, aren't you? And no one has told you anything about me ... Perfect!",
+        text: "Uteki,correct? I am aware you need assistance. Your snake helps you?",
         sideEffect: () => {
 
         },
         options: [
             {
-                text: "End Conversation",
-                nextText: 4
+                text: ". . .",
+                nextText: 3
             }
         ]
     },
     {
         id:3,
-        text: "o-kay ... (leaves)",
+        text: "I do, he can use sign though if you would prefer.",
         sideEffect: () => {
 
         },
         options: [
             {
-                text: "End Conversation",
+                text: ". . .",
                 nextText: 4
             }
         ]
     },
     {
         id:4,
+        text: "Whatever he feels comfortable with, I want all students to feel safe.",
+        sideEffect: () => {
+            
+        },
+        options: [
+            {
+                text: ". . . ",
+                nextText: 5
+            }
+        ]
+    },
+    {
+        id: 5,
+        text: "Uteki, signs: Thank you, Sensei",
+        sideEffect: () => {
+
+        },
+        options: [
+            {
+                text: ". . .",
+                nextText: 6
+            }
+        ]
+    },
+    {
+        id: 6,
         text: "",
         sideEffect: () => {
-            endConvo("darnell", state.currentRoom)
+            endConvo("uteki", state.currentRoom)
         },
         options: []
     }
@@ -410,7 +447,7 @@ let textNodes = [
         text: "In class again, nothing new here.",
         sideEffect: () => {
             backGroundChange(4);
-            convoStart("darnell", 1)
+            convoStart("uteki", 1)
         },
         options: [
             {
