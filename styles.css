@@ -66,14 +66,29 @@
     /* justify-content: space-evenly; */
 }
 
-.miniAvatar {
+#miniAvatar {
     width: 20%;
     height: 95%;
     /* border: solid burlywood; */
-    /* background-image: url(/assets/download20240102024743.png); */
-    background-size: 225%;
     background-repeat: no-repeat;
+}
+
+.miniAvatarTawfiq {
+    background-size: 225%;
     background-position: -20% 50%;
+    background-image: url(/assets/Uteki_main.png);
+}
+
+.miniAvatarXavi {
+    background-size: 275%;
+    background-position: -08% 10%;
+    background-image: url(/assets/xavi.png);
+}
+
+.miniAvatarSign {
+    background-size: 100%;
+    background-position: 25% 70%;
+    background-image: url(/assets/thankyouSign.gif);
 }
 
 .dialogBox {
@@ -100,8 +115,8 @@
 .miniChatter {
     width: 08%;
     height: 04%;
-    margin-top: -0.5%;
-    margin-left: -01%;
+    margin-top: -1.5%;
+    margin-left: -2.0%;
     position: absolute;
     border: solid pink;
     background-color: rgba(238, 107, 107, 0.95);
@@ -109,6 +124,9 @@
     box-shadow: 06px 06px 2px 1px rgba(0, 0, 255, .2);
     display: flex;
     justify-content: center;
+    font-weight: 600;
+    font-size: 2vw;
+    text-align: center;
 }
 
 .textBox {

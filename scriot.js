@@ -159,7 +159,7 @@ let avatarChange = (x) => {
             nameTag.classList.remove('chatter')
             break;
         case 1:
-            avatar.style.backgroundImage = "url('/assets/download20240102024743.png')";
+            avatar.style.backgroundImage = "url('/assets/Uteki_main.png')";
             nameTag.classList.add('chatter')
             nameTag.innerText = "Uteki"
             break;
@@ -174,12 +174,27 @@ let avatarChange = (x) => {
 let miniAvatarChange = (x) => {
     switch (x) {
         case 0:
-            miniAvatar.style.backgroundImage = "none";
+            miniAvatar.className = ""
             miniChatter.innerText = "";
-            miniChatter,classList.remove('miniChatter');
+            miniChatter.classList.remove('miniChatter');
             break;
         case 1:
-            miniAvatar.style.backgroundImage = "url('')";
+            miniAvatarChange(0)
+            miniAvatar.classList.add('miniAvatarXavi');
+            miniChatter.innerText = "Xavi";
+            miniChatter.classList.add('miniChatter');
+            break;
+        case 2:
+            miniAvatarChange(0)
+            miniAvatar.classList.add('miniAvatarTawfiq');
+            miniChatter.innerText = "Tawfiq";
+            miniChatter.classList.add('miniChatter');
+            break;
+        case 3:
+            miniAvatarChange(0);
+            miniAvatar.classList.add('miniAvatarSign');
+            miniChatter.innerText = "Uteki";
+            miniChatter.classList.add('miniChatter');
 
     }
 }
@@ -297,7 +312,7 @@ let uteki = [ {
         id:2,
         text: "Uteki,correct? I am aware you need assistance. Your snake helps you?",
         sideEffect: () => {
-
+            miniAvatarChange(1)
         },
         options: [
             {
@@ -310,7 +325,7 @@ let uteki = [ {
         id:3,
         text: "I do, he can use sign though if you would prefer.",
         sideEffect: () => {
-
+            miniAvatarChange(2)
         },
         options: [
             {
@@ -323,7 +338,7 @@ let uteki = [ {
         id:4,
         text: "Whatever he feels comfortable with, I want all students to feel safe.",
         sideEffect: () => {
-            
+            miniAvatarChange(1)
         },
         options: [
             {
@@ -336,7 +351,7 @@ let uteki = [ {
         id: 5,
         text: "Uteki, signs: Thank you, Sensei",
         sideEffect: () => {
-
+            miniAvatarChange(3)
         },
         options: [
             {
@@ -349,6 +364,7 @@ let uteki = [ {
         id: 6,
         text: "",
         sideEffect: () => {
+            miniAvatarChange(0)
             endConvo("uteki", state.currentRoom)
         },
         options: []
