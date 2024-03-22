@@ -19,3 +19,11 @@ Xavi: I am aware you need assistance. Your snake helps you?
 Tawfiq: I do, he can use sign though if you would prefer.
 Xavi: Whatever he feels comfortable with, I want all students to feel safe.
 Uteki, signs: Thank you, Sensei
+
+Stats
+Presence
+Empathy
+Appeal
+Tolerance
+Resolve
+Commitments
