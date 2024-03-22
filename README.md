@@ -5,7 +5,8 @@ Text adventure place to place.(DONE)
 Function to change brightness
 Set up a NPC with lowgrade stats.
 Build NPC interaction.(DONE)
-Add a day cycle
+Add a day cycle(DONE)
+Set up a emotion cool down.
 
 
 Brown boy's name is: Uteki
