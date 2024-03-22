@@ -6,6 +6,7 @@ Function to change brightness
 Set up a NPC with lowgrade stats.
 Build NPC interaction.(DONE)
 Add a day cycle(DONE)
+Set up an emotion logging function
 Set up a emotion cool down.
 
 
