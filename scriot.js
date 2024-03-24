@@ -36,17 +36,8 @@ let mainCharacter = {
     health: 0,
     resolve: 0,
     emotions:[
-        {
-            anger: 0,
-            fear: 0,
-            sadness: 0,
-            boredom: 0,
-            joy: 0,
-            interest: 0,
-            surprise: 0,
-            acceptance: 0
-        }
     ],
+    commitments: []
 }
 
 let npcDarnell = {
@@ -61,16 +52,6 @@ let npcDarnell = {
     health: 0,
     resolve: 0,
     emotions:[
-        {
-            anger: 0,
-            fear: 0,
-            sadness: 0,
-            boredom: 0,
-            joy: 0,
-            interest: 0,
-            surprise: 0,
-            acceptance: 0
-        }
     ],
     commitments: [
         {
@@ -91,22 +72,25 @@ let npcChrissy = {
     health: 0,
     resolve: 0,
     emotions:[
-        {
-            anger: {},
-            fear: {},
-            sadness: {},
-            boredom: {},
-            joy: {},
-            interest: {},
-            surprise: {},
-            acceptance: {}
-        }
     ],
     commitments: [
         {
             darnell: 0
         }
     ]
+}
+
+let cast = [mainCharacter, npcChrissy, npcDarnell]
+
+let emotionalHealing = () => {
+    cast.forEach(member => {
+        if (member.emotions.length > 0){
+            member.emotions.forEach(feeling => {
+                feeling.level -= 1;
+                // write if that will remove 0 level emotion from emotions
+            })
+        } 
+    })
 }
 
 // ------- Image and audio asset changer functions--------
