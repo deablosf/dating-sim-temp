@@ -205,6 +205,15 @@ let miniAvatarChange = (x) => {
 }
 
 
+// ----------------
+// ------- SOCIAL ACTIONS ------
+
+const instillEmotion = (target, noun, feeling) => {
+    if (cast[target].emotions.length <= 0) {
+        target.emotions.push({resip: noun.name, emotion: feeling, level: 1})
+    }
+};
+
 
 // --------------
 // ------- Conversation Functions -------
