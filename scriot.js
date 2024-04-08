@@ -84,15 +84,33 @@ let cast = [mainCharacter, npcChrissy, npcDarnell]
 
 let emotionalHealing = () => {
     cast.forEach(member => {
-        if (member.emotions.length > 0){
+        if (member.emotions.length > 0) {
+            console.log(member.emotions)
             member.emotions.forEach(feeling => {
+                console.log(feeling)
                 feeling.level -= 1;
-                // write if that will remove 0 level emotion from emotions
+                if (feeling.level <= 0) {
+                   member.emotions = member.emotions.filter(people => people.resip != [feeling.resip])
+                }
+                console.log(member)
             })
-        } 
-    })
+        }
+        
+    });
 }
 
+let dayShift = () => {
+    emotionalHealing();
+    state.day += 1;
+    avatar.innerText = "DAY " + state.day;
+    setTimeout(()=> {
+        avatar.innerText = "";
+     }
+     ,3000);
+}
+
+
+// ----------
 // ------- Image and audio asset changer functions--------
 
 const optionsButton = () => {
@@ -186,29 +204,9 @@ let miniAvatarChange = (x) => {
     }
 }
 
-let dayShift = () => {
-    cast.forEach(member => {
-        if (member.emotions.length > 0) {
-            console.log(member.emotions)
-            member.emotions.forEach(feeling => {
-                console.log(feeling)
-                feeling.level -= 1;
-                if (feeling.level <= 0) {
-                   member.emotions = member.emotions.filter(people => people.resip != [feeling.resip])
-                }
-                console.log(member)
-            })
-        }
-        
-    });
-    state.day += 1;
-    avatar.innerText = "DAY " + state.day;
-    setTimeout(()=> {
-        avatar.innerText = "";
-     }
-     ,3000);
-}
 
+
+// --------------
 // ------- Conversation Functions -------
 
 let charConvoNode = (character, convoNodeIndex) => {
