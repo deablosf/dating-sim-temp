@@ -72,11 +72,6 @@ let npcChrissy = {
     health: 0,
     resolve: 0,
     emotions:[
-        {
-            resip: "Darnell",
-            emotion: "anger",
-            level: 1
-        }
     ],
     commitments: [
         {
