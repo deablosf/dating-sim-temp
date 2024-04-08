@@ -187,6 +187,17 @@ let miniAvatarChange = (x) => {
 }
 
 let dayShift = () => {
+    cast.forEach(member => {
+        if (member.emotions.length > 0) {
+            member.emotions.forEach(target => {
+                target.level -= 1;
+                if (target.level <= 0) {
+                   member.emotions = member.emotions.filter(person => person.name != [target])
+                }
+            })
+        }
+        
+    });
     state.day += 1;
     avatar.innerText = "DAY " + state.day;
     setTimeout(()=> {
