@@ -72,6 +72,11 @@ let npcChrissy = {
     health: 0,
     resolve: 0,
     emotions:[
+        {
+            resip: "Darnell",
+            emotion: "anger",
+            level: 1
+        }
     ],
     commitments: [
         {
@@ -189,11 +194,14 @@ let miniAvatarChange = (x) => {
 let dayShift = () => {
     cast.forEach(member => {
         if (member.emotions.length > 0) {
-            member.emotions.forEach(target => {
-                target.level -= 1;
-                if (target.level <= 0) {
-                   member.emotions = member.emotions.filter(person => person.name != [target])
+            console.log(member.emotions)
+            member.emotions.forEach(feeling => {
+                console.log(feeling)
+                feeling.level -= 1;
+                if (feeling.level <= 0) {
+                   member.emotions = member.emotions.filter(people => people.resip != [feeling.resip])
                 }
+                console.log(member)
             })
         }
         
