@@ -7,7 +7,7 @@ Set up a NPC with lowgrade stats. (DONE)
 Build NPC interaction.(DONE)
 Add a day cycle(DONE)
 Set up an emotion logging function
-Set up a emotion cool down.
+Set up a emotion cool down.(DONE)
 
 
 Brown boy's name is: Uteki

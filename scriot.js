@@ -25,7 +25,7 @@ let state = {
 };
 
 let mainCharacter = {
-    name: "",
+    name: "Xavi",
     age: 0,
     Allure: 0,
     presence: 0,
