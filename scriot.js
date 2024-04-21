@@ -51,6 +51,8 @@ let npcDarnell = {
     tolerance: 0,
     health: 0,
     resolve: 0,
+    currentLocation: "",
+    favorateLocations: [],
     emotions:[
     ],
     commitments: [
@@ -71,6 +73,8 @@ let npcChrissy = {
     tolerance: 0,
     health: 0,
     resolve: 0,
+    currentLocation: "",
+    favorateLocations: [],
     emotions:[
     ],
     commitments: [
@@ -215,8 +219,10 @@ const instillEmotion = (target, noun, feeling) => {
 };
 
 
+
 // --------------
 // ------- Conversation Functions -------
+// --------------
 
 let charConvoNode = (character, convoNodeIndex) => {
     console.log(character.find(convoNode => convoNode.id === convoNodeIndex))
@@ -264,7 +270,9 @@ let endConvo = (character, currentRoom) => {
     console.log (state[character], currentRoom)
 }
 
+//----------
 // ------- World travelling function -------
+//----------
 
 let showTextNode = (textNodeIndex) => {
     const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
