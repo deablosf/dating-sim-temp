@@ -84,7 +84,9 @@ let npcChrissy = {
     ]
 }
 
-let cast = [mainCharacter, npcChrissy, npcDarnell]
+let cast = [mainCharacter, npcChrissy, npcDarnell];
+
+let npcCast = [npcChrissy, npcDarnell]
 
 let emotionalHealing = () => {
     cast.forEach(member => {
@@ -113,7 +115,6 @@ let dayShift = () => {
      ,3000);
 }
 
-
 let actShift = () => {
     if (state.act < 3){
         state.act += 1
@@ -121,6 +122,13 @@ let actShift = () => {
         console.log("You're too tired")
     }
 }
+
+let relocate = () => {
+    npcCast.forEach(member => {
+        member.currentLocation = member.favorateLocations[Math.floor(Math.random() * member.favorateLocations.length)]
+    });
+}
+
 
 
 // ----------
