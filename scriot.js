@@ -53,6 +53,7 @@ let npcDarnell = {
     resolve: 0,
     currentLocation: "",
     favorateLocations: ["Class", "Mall", "Malt Shop", "Park"],
+    conversed: [],
     emotions:[
     ],
     commitments: [
@@ -75,6 +76,7 @@ let npcChrissy = {
     resolve: 0,
     currentLocation: "",
     favorateLocations: ["Class", "Mall", "Malt Shop", "Park"],
+    conversed: [],
     emotions:[
     ],
     commitments: [
