@@ -52,7 +52,7 @@ let npcDarnell = {
     health: 0,
     resolve: 0,
     currentLocation: "",
-    favorateLocations: [],
+    favorateLocations: ["Class", "Mall", "Malt Shop", "Park"],
     emotions:[
     ],
     commitments: [
@@ -74,7 +74,7 @@ let npcChrissy = {
     health: 0,
     resolve: 0,
     currentLocation: "",
-    favorateLocations: [],
+    favorateLocations: ["Class", "Mall", "Malt Shop", "Park"],
     emotions:[
     ],
     commitments: [
@@ -105,8 +105,15 @@ let emotionalHealing = () => {
     });
 }
 
+let relocate = () => {
+    npcCast.forEach(member => {
+        member.currentLocation = member.favorateLocations[Math.floor(Math.random() * member.favorateLocations.length)]
+    });
+}
+
 let dayShift = () => {
     emotionalHealing();
+    relocate();
     state.day += 1;
     avatar.innerText = "DAY " + state.day;
     setTimeout(()=> {
@@ -123,11 +130,7 @@ let actShift = () => {
     }
 }
 
-let relocate = () => {
-    npcCast.forEach(member => {
-        member.currentLocation = member.favorateLocations[Math.floor(Math.random() * member.favorateLocations.length)]
-    });
-}
+
 
 
 
