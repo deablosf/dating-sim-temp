@@ -19,7 +19,7 @@ let state = {
     currentConvo: '',
     brightNess: 100,
     day: 1,
-    itemFlap: 1,
+    act: 1,
     uteki: 1,
     chrissy: 2
 };
@@ -111,6 +111,15 @@ let dayShift = () => {
         avatar.innerText = "";
      }
      ,3000);
+}
+
+
+let actShift = () => {
+    if (state.act < 3){
+        state.act += 1
+    } else {
+        console.log("You're too tired")
+    }
 }
 
 
