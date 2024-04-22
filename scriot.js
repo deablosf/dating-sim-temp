@@ -138,8 +138,12 @@ let localCheck = () => {
 	npcCast.forEach(member => {
   	npcCast.forEach(target => {
     if (member.name != target.name){
-    	if (member.currentLocation == target.currentLocation) {
+    	if (member.currentLocation == target.currentLocation && !(member.conversed.includes(target.name))) {
       	console.log("LOCATION MATCH")
+        member.conversed.push(target.name)
+        target.conversed.push(member.name)
+      } else if (member.currentLocation == target.currentLocation && member.conversed.includes(target.name)) {
+      console.log("Already chatted")
       } else {
       console.log(member.name + "'s location doesn't match with " + target.name + "'s location")
       }
