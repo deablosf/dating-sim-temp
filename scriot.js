@@ -132,7 +132,15 @@ let actShift = () => {
     }
 }
 
-
+let conflict = () => {
+	npcCast.forEach(member => {
+  	npcCast.forEach(target => {
+    if (member.name != target.name){
+    	console.log(member.currentLocation + " " + target.currentLocation)
+    }
+    })
+  })
+}
 
 
 
