@@ -139,7 +139,7 @@ let localCheck = () => {
   	npcCast.forEach(target => {
     if (member.name != target.name){
     	if (member.currentLocation == target.currentLocation && !(member.conversed.includes(target.name))) {
-      	console.log("LOCATION MATCH")
+      	console.log("LOCATION MATCH " + [member])
         member.conversed.push(target.name)
         target.conversed.push(member.name)
       } else if (member.currentLocation == target.currentLocation && member.conversed.includes(target.name)) {
@@ -150,6 +150,10 @@ let localCheck = () => {
     }
     })
   })
+}
+
+let instill = (attacker, defender) => {
+	
 }
 
 
