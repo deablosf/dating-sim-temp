@@ -107,11 +107,6 @@ let emotionalHealing = () => {
     });
 }
 
-let relocate = () => {
-    npcCast.forEach(member => {
-        member.currentLocation = member.favorateLocations[Math.floor(Math.random() * member.favorateLocations.length)]
-    });
-}
 
 let dayShift = () => {
     emotionalHealing();
@@ -132,15 +127,27 @@ let actShift = () => {
     }
 }
 
+let relocate = () => {
+    npcCast.forEach(member => {
+        member.currentLocation = member.favorateLocations[Math.floor(Math.random() * member.favorateLocations.length)]
+        console.log(member.name + "'s current local: " + member.currentLocation)
+    });
+}
+
 let localCheck = () => {
 	npcCast.forEach(member => {
   	npcCast.forEach(target => {
     if (member.name != target.name){
-    	console.log(member.currentLocation + " " + target.currentLocation)
+    	if (member.currentLocation == target.currentLocation) {
+      	console.log("LOCATION MATCH")
+      } else {
+      console.log(member.name + "'s location doesn't match with " + target.name + "'s location")
+      }
     }
     })
   })
 }
+
 
 
 
