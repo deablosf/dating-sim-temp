@@ -20,4 +20,4 @@ Tawfiq: I do, he can use sign though if you would prefer.
 Xavi: Whatever he feels comfortable with, I want all students to feel safe.
 Uteki, signs: Thank you, Sensei
 
-Working on this after deepest V
+Working on this after deepest V ddd
