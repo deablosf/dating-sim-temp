@@ -157,8 +157,6 @@ let instill = (attacker, defender) => {
 }
 
 
-
-
 // ----------
 // ------- Image and audio asset changer functions--------
 
