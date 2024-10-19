@@ -207,6 +207,7 @@ let avatarChange = (x) => {
     switch (x) {
         case 0:
             avatar.style.backgroundImage = "none";
+            avatar.classList.remove('chrissy')
             nameTag.innerText = ""
             nameTag.classList.remove('chatter')
             break;
@@ -218,6 +219,7 @@ let avatarChange = (x) => {
         case 2:
             avatar.style.backgroundImage = "url('assets/chrissy_main.png')"
             nameTag.classList.add('chatter')
+            avatar.classList.add('chrissy')
             nameTag.innerText = "Chrissy"
             break;
     }
@@ -439,48 +441,77 @@ let chrissy = [ {
     },
     options: [
         {
-            text: "Uteki, right?",
+            text: "What's the flavor of the day?",
             nextText: 2
         }
     ]
     },
     {
         id:2,
-    text: ". . .",
+    text: "Today's flavor is boysenberry",
     sideEffect: () => {
-        avatarChange(1);
+        ;
     },
     options: [
         {
-            text: "Uteki, right?",
-            nextText: 2
+            text: "That sounds delish! I'll have a scoop of vanilla with sprinkles, in a waffle cone.",
+            nextText: 3
+        },
+        {
+            text: "That sounds great, I'll take",
+            nextText: 4
         }
     ]
     },
     {
         id:3,
-    text: ". . .",
+    text: ". . . coming right up . . .",
     sideEffect: () => {
-        avatarChange(1);
+        avatar.style.backgroundPositionY = '35%';
     },
     options: [
         {
-            text: "Uteki, right?",
-            nextText: 2
+            text: "Sweet",
+            nextText: 5
         }
     ]
     },
     {
         id:4,
-    text: ". . .",
+    text: "Boysenberry Coming right up!",
     sideEffect: () => {
-        avatarChange(1);
+        avatar.style.backgroundPositionX = '96%';
     },
     options: [
         {
-            text: "Uteki, right?",
-            nextText: 2
+            text: "Sweet",
+            nextText: 5
         }
+    ]
+    },
+    {
+        id:5,
+    text: "Here you go sir",
+    sideEffect: () => {
+        avatar.removeAttribute('style');
+        avatar.removeAttribute('style');
+    },
+    options: [
+        {
+            text: "Thank you",
+            nextText: 6
+        }
+    ]
+    },
+    {
+        id:6,
+    text: "Have a great day sir!",
+    sideEffect: () => {
+        miniAvatarChange(0)
+        endConvo("chrissy", state.currentRoom);
+    },
+    options: [
+        
     ]
     }
 ]
@@ -562,7 +593,8 @@ let textNodes = [
         id: 5,
         text: "The smell of frozen sugar and cream! Maybe you have time for taste...",
         sideEffect: () => {
-            backGroundChange(6);
+            backGroundChange(6)
+            convoStart("chrissy", 1);
         },
         options: [
             {

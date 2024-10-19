@@ -214,6 +214,15 @@
 
 /* -----CHARATER VISUAL SETTINGS----- */
 
+.chrissy {
+    background-image: url(/assets/chrissy_main.png);
+    background-size: 210%;
+}
+
+.chrissyUgh {
+    background-position: 0% 35%;
+}
+
 .miniAvatarTawfiq {
     background-size: 225%;
     background-position: -20% 50%;
