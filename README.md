@@ -8,6 +8,7 @@ Build NPC interaction.(DONE)
 Add a day cycle(DONE)
 Set up an emotion logging function
 Set up a emotion cool down.(DONE)
+Set up a function that checks all avaible characters to see if anyone is at the location you have arrived at.
 
 
 Brown boy's name is: Uteki
