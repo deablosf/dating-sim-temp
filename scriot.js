@@ -21,7 +21,7 @@ let state = {
     day: 1,
     act: 1,
     uteki: 1,
-    chrissy: 2
+    chrissy: 1
 };
 
 let mainCharacter = {
@@ -216,7 +216,7 @@ let avatarChange = (x) => {
             nameTag.innerText = "Uteki"
             break;
         case 2:
-            avatar.style.backgroundImage = "url('')"
+            avatar.style.backgroundImage = "url('assets/chrissy_main.png')"
             nameTag.classList.add('chatter')
             nameTag.innerText = "Chrissy"
             break;
@@ -429,6 +429,60 @@ let uteki = [ {
         options: []
     }
 
+]
+
+let chrissy = [ {
+    id:1,
+    text: "Hi, Welcome to two Scoops, what would you like!",
+    sideEffect: () => {
+        avatarChange(2);
+    },
+    options: [
+        {
+            text: "Uteki, right?",
+            nextText: 2
+        }
+    ]
+    },
+    {
+        id:2,
+    text: ". . .",
+    sideEffect: () => {
+        avatarChange(1);
+    },
+    options: [
+        {
+            text: "Uteki, right?",
+            nextText: 2
+        }
+    ]
+    },
+    {
+        id:3,
+    text: ". . .",
+    sideEffect: () => {
+        avatarChange(1);
+    },
+    options: [
+        {
+            text: "Uteki, right?",
+            nextText: 2
+        }
+    ]
+    },
+    {
+        id:4,
+    text: ". . .",
+    sideEffect: () => {
+        avatarChange(1);
+    },
+    options: [
+        {
+            text: "Uteki, right?",
+            nextText: 2
+        }
+    ]
+    }
 ]
 
 // ------- World At Large -------

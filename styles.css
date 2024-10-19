@@ -73,24 +73,6 @@
     background-repeat: no-repeat;
 }
 
-.miniAvatarTawfiq {
-    background-size: 225%;
-    background-position: -20% 50%;
-    background-image: url(/assets/Uteki_main.png);
-}
-
-.miniAvatarXavi {
-    background-size: 275%;
-    background-position: -08% 10%;
-    background-image: url(/assets/xavi.png);
-}
-
-.miniAvatarSign {
-    background-size: 100%;
-    background-position: 25% 70%;
-    background-image: url(/assets/thankyouSign.gif);
-}
-
 .dialogBox {
     width: 70%;
     max-height: 100%;
@@ -232,3 +214,20 @@
 
 /* -----CHARATER VISUAL SETTINGS----- */
 
+.miniAvatarTawfiq {
+    background-size: 225%;
+    background-position: -20% 50%;
+    background-image: url(/assets/Uteki_main.png);
+}
+
+.miniAvatarXavi {
+    background-size: 275%;
+    background-position: -08% 10%;
+    background-image: url(/assets/xavi.png);
+}
+
+.miniAvatarSign {
+    background-size: 100%;
+    background-position: 25% 70%;
+    background-image: url(/assets/thankyouSign.gif);
+}
