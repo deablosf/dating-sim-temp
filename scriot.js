@@ -21,7 +21,8 @@ let state = {
     day: 1,
     act: 1,
     uteki: 1,
-    chrissy: 1
+    chrissy: 1,
+    inConvo: false
 };
 
 let mainCharacter = {
@@ -40,8 +41,8 @@ let mainCharacter = {
     commitments: []
 }
 
-let npcDarnell = {
-    name: "Darnell",
+let npcUteki = {
+    name: "uteki",
     age: 20,
     Allure: 0,
     presence: 0,
@@ -51,8 +52,8 @@ let npcDarnell = {
     tolerance: 0,
     health: 0,
     resolve: 0,
-    currentLocation: "",
-    favorateLocations: ["Class", "Mall", "Malt Shop", "Park"],
+    currentLocation: "school",
+    favorateLocations: ["school"],
     conversed: [],
     emotions:[
     ],
@@ -64,7 +65,7 @@ let npcDarnell = {
 }
 
 let npcChrissy = {
-    name: "Chrissy",
+    name: "chrissy",
     age: 20,
     Allure: 0,
     presence: 0,
@@ -74,8 +75,8 @@ let npcChrissy = {
     tolerance: 0,
     health: 0,
     resolve: 0,
-    currentLocation: "",
-    favorateLocations: ["Class", "Mall", "Malt Shop", "Park"],
+    currentLocation: "two scoops",
+    favorateLocations: ["two scoops", "school"],
     conversed: [],
     emotions:[
     ],
@@ -86,9 +87,9 @@ let npcChrissy = {
     ]
 }
 
-let cast = [mainCharacter, npcChrissy, npcDarnell];
+let cast = [mainCharacter, npcChrissy, npcUteki];
 
-let npcCast = [npcChrissy, npcDarnell]
+let npcCast = [npcChrissy, npcUteki]
 
 let emotionalHealing = () => {
     cast.forEach(member => {
@@ -132,6 +133,18 @@ let relocate = () => {
         member.currentLocation = member.favorateLocations[Math.floor(Math.random() * member.favorateLocations.length)]
         console.log(member.name + "'s current local: " + member.currentLocation)
     });
+}
+
+let locationSweeper = (local) => {
+    if(state.inConvo != true) {
+        npcCast.forEach(member => {
+            console.log(member)
+            if (member.currentLocation == local) {
+                console.log(member.name)
+                convoStart(member.name, 1)
+            }
+        })
+    }
 }
 
 let localCheck = () => {
@@ -304,12 +317,14 @@ const convoOption = (option, character) => {
 
 let convoStart = (x, index) => {
     if (state[x] === 1) {
+        state.inConvo = true
         charConvoNode(eval(x),index)
     }
 }
 
 let endConvo = (character, currentRoom) => {
     state[character] = 2;
+    state.inConvo = false
     avatarChange(0);
     showTextNode(currentRoom);
     console.log (state[character], currentRoom)
@@ -594,7 +609,7 @@ let textNodes = [
         text: "The smell of frozen sugar and cream! Maybe you have time for taste...",
         sideEffect: () => {
             backGroundChange(6)
-            convoStart("chrissy", 1);
+            locationSweeper("two scoops");
         },
         options: [
             {
@@ -608,7 +623,7 @@ let textNodes = [
         text: "In class again, nothing new here.",
         sideEffect: () => {
             backGroundChange(4);
-            convoStart("uteki", 1)
+            locationSweeper("school");
         },
         options: [
             {
