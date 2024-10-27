@@ -183,7 +183,7 @@ let npcChrissy = {
     ],
     commitments: [
         {
-            darnell: 0
+            uteki: 0
         }
     ]
 }
@@ -206,14 +206,14 @@ let npcSophia = {
     ],
     commitments: [
         {
-            darnell: 0
+            uteki: 0
         }
     ]
 }
 
 let cast = [mainCharacter, npcChrissy, npcUteki];
 
-let npcCast = [npcChrissy, npcUteki]
+let npcCast = [npcChrissy, npcUteki, npcSophia]
 
 let emotionalHealing = () => {
     cast.forEach(member => {
@@ -476,6 +476,46 @@ let uteki = [ {
 
 ]
 
+let sohpia = [ 
+    {
+        id: 1,
+        text: "",
+        sideEffect: () => {},
+        options: []
+    },
+    {
+        id: 2,
+        text: "",
+        sideEffect: () => {},
+        options: []
+    },
+    {
+        id: 3,
+        text: "",
+        sideEffect: () => {},
+        options: []
+    },
+    {
+        id: 4,
+        text: "",
+        sideEffect: () => {},
+        options: []
+    },
+    {
+        id: 5,
+        text: "",
+        sideEffect: () => {},
+        options: []
+    },
+    {
+        id: 6,
+        text: "",
+        sideEffect: () => {},
+        options: []
+    }
+
+]
+
 let chrissy = [ {
     id:1,
     text: "Hi, Welcome to two Scoops, what would you like!",
@@ -491,11 +531,11 @@ let chrissy = [ {
     },
     {
         id:2,
-    text: "Today's flavor is boysenberry",
-    sideEffect: () => {
+        text: "Today's flavor is boysenberry",
+        sideEffect: () => {
         ;
     },
-    options: [
+        options: [
         {
             text: "That sounds delish! I'll have a scoop of vanilla with sprinkles, in a waffle cone.",
             nextText: 3
