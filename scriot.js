@@ -10,6 +10,107 @@ const miniChatter = document.getElementById("miniChatter");
 const textElement = document.getElementById('text');
 const optionButtonsElement = document.getElementById('optionsBox');
 
+
+
+
+// ----------
+// ------- Image and audio asset changer functions--------
+
+const optionsButton = () => {
+    alert("Option Button is responding")
+    let divBox = document.createElement('div');
+    divBox.innerHTML = ("<button id='closeOp' onclick=''>X</button> <button onclick=''>Bright Up</button> <button onclick=''>Bright Down</button>")
+};
+
+let theBed = document.createElement("div");
+theBed.className = "bed";
+theBed.setAttribute("id", "bed")
+theBed.setAttribute("onclick", "dayShift()")
+
+let killBed = () => {
+    const killer = document.getElementById("bed");
+    killer.remove()
+}
+
+let backGroundChange = (x) => {
+    switch (x) {
+        case 0:
+            backGround.style.backgroundImage = "none";
+            break;
+        case 1:
+            backGround.style.backgroundImage = "url('/assets/paolo-villavicencio-s03-b01-bg05-color-night.jpg')";
+            backGround.insertBefore(theBed, backGround.firstChild)
+            break;
+        case 2:
+            backGround.style.backgroundImage = "url('/assets/a5d6f8fdf79594938476aef866c3d69dd2a03bee.jpeg')";
+            break;
+        case 3:
+            backGround.style.backgroundImage = "url('/assets/BG-shop-ext0blayout2finrev1_1340_c.png')";
+            break;
+        case 4:
+            backGround.style.backgroundImage = "url('/assets/wp4720761.jpg')";
+            break;
+        case 5:
+            backGround.style.backgroundImage = "url('/assets/BG-shop-ext1layout2FLATcontrast_1340_c.png')";
+            break;
+        case 6:
+            backGround.style.backgroundImage = "url('/assets/BG-shop-int1layout2flat_1750.png')";
+            break;
+    }  
+}
+
+let avatarChange = (x) => {
+    switch (x) {
+        case 0:
+            avatar.style.backgroundImage = "none";
+            avatar.classList.remove('chrissy')
+            nameTag.innerText = ""
+            nameTag.classList.remove('chatter')
+            break;
+        case 1:
+            avatar.style.backgroundImage = "url('/assets/Uteki_main.png')";
+            nameTag.classList.add('chatter')
+            nameTag.innerText = "Uteki"
+            break;
+        case 2:
+            avatar.style.backgroundImage = "url('assets/chrissy_main.png')"
+            nameTag.classList.add('chatter')
+            avatar.classList.add('chrissy')
+            nameTag.innerText = "Chrissy"
+            break;
+    }
+}
+
+let miniAvatarChange = (x) => {
+    switch (x) {
+        case 0:
+            miniAvatar.className = ""
+            miniChatter.innerText = "";
+            miniChatter.classList.remove('miniChatter');
+            break;
+        case 1:
+            miniAvatarChange(0)
+            miniAvatar.classList.add('miniAvatarXavi');
+            miniChatter.innerText = "Xavi";
+            miniChatter.classList.add('miniChatter');
+            break;
+        case 2:
+            miniAvatarChange(0)
+            miniAvatar.classList.add('miniAvatarTawfiq');
+            miniChatter.innerText = "Tawfiq";
+            miniChatter.classList.add('miniChatter');
+            break;
+        case 3:
+            miniAvatarChange(0);
+            miniAvatar.classList.add('miniAvatarSign');
+            miniChatter.innerText = "Uteki";
+            miniChatter.classList.add('miniChatter');
+
+    }
+}
+
+
+
 // ------------
 // ------- STATES of World, Player and NPCs-------
 //-------------
@@ -169,102 +270,6 @@ let instill = (attacker, defender) => {
 	
 }
 
-
-// ----------
-// ------- Image and audio asset changer functions--------
-
-const optionsButton = () => {
-    alert("Option Button is responding")
-    let divBox = document.createElement('div');
-    divBox.innerHTML = ("<button id='closeOp' onclick=''>X</button> <button onclick=''>Bright Up</button> <button onclick=''>Bright Down</button>")
-};
-
-let theBed = document.createElement("div");
-theBed.className = "bed";
-theBed.setAttribute("id", "bed")
-theBed.setAttribute("onclick", "dayShift()")
-
-let killBed = () => {
-    const killer = document.getElementById("bed");
-    killer.remove()
-}
-
-let backGroundChange = (x) => {
-    switch (x) {
-        case 0:
-            backGround.style.backgroundImage = "none";
-            break;
-        case 1:
-            backGround.style.backgroundImage = "url('/assets/paolo-villavicencio-s03-b01-bg05-color-night.jpg')";
-            backGround.insertBefore(theBed, backGround.firstChild)
-            break;
-        case 2:
-            backGround.style.backgroundImage = "url('/assets/a5d6f8fdf79594938476aef866c3d69dd2a03bee.jpeg')";
-            break;
-        case 3:
-            backGround.style.backgroundImage = "url('/assets/BG-shop-ext0blayout2finrev1_1340_c.png')";
-            break;
-        case 4:
-            backGround.style.backgroundImage = "url('/assets/wp4720761.jpg')";
-            break;
-        case 5:
-            backGround.style.backgroundImage = "url('/assets/BG-shop-ext1layout2FLATcontrast_1340_c.png')";
-            break;
-        case 6:
-            backGround.style.backgroundImage = "url('/assets/BG-shop-int1layout2flat_1750.png')";
-            break;
-    }  
-}
-
-let avatarChange = (x) => {
-    switch (x) {
-        case 0:
-            avatar.style.backgroundImage = "none";
-            avatar.classList.remove('chrissy')
-            nameTag.innerText = ""
-            nameTag.classList.remove('chatter')
-            break;
-        case 1:
-            avatar.style.backgroundImage = "url('/assets/Uteki_main.png')";
-            nameTag.classList.add('chatter')
-            nameTag.innerText = "Uteki"
-            break;
-        case 2:
-            avatar.style.backgroundImage = "url('assets/chrissy_main.png')"
-            nameTag.classList.add('chatter')
-            avatar.classList.add('chrissy')
-            nameTag.innerText = "Chrissy"
-            break;
-    }
-}
-
-let miniAvatarChange = (x) => {
-    switch (x) {
-        case 0:
-            miniAvatar.className = ""
-            miniChatter.innerText = "";
-            miniChatter.classList.remove('miniChatter');
-            break;
-        case 1:
-            miniAvatarChange(0)
-            miniAvatar.classList.add('miniAvatarXavi');
-            miniChatter.innerText = "Xavi";
-            miniChatter.classList.add('miniChatter');
-            break;
-        case 2:
-            miniAvatarChange(0)
-            miniAvatar.classList.add('miniAvatarTawfiq');
-            miniChatter.innerText = "Tawfiq";
-            miniChatter.classList.add('miniChatter');
-            break;
-        case 3:
-            miniAvatarChange(0);
-            miniAvatar.classList.add('miniAvatarSign');
-            miniChatter.innerText = "Uteki";
-            miniChatter.classList.add('miniChatter');
-
-    }
-}
 
 
 // ----------------
