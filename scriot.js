@@ -188,6 +188,29 @@ let npcChrissy = {
     ]
 }
 
+let npcSophia = {
+    name: "sophia",
+    age: 40,
+    Allure: 0,
+    presence: 0,
+    empathy: 0,
+    appeal: 0,
+    recovery: 0,
+    tolerance: 0,
+    health: 0,
+    resolve: 0,
+    currentLocation: "two scoops",
+    favorateLocations: ["two scoops", "school"],
+    conversed: [],
+    emotions:[
+    ],
+    commitments: [
+        {
+            darnell: 0
+        }
+    ]
+}
+
 let cast = [mainCharacter, npcChrissy, npcUteki];
 
 let npcCast = [npcChrissy, npcUteki]
