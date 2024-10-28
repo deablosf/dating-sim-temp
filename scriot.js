@@ -78,6 +78,12 @@ let avatarChange = (x) => {
             avatar.classList.add('chrissy')
             nameTag.innerText = "Chrissy"
             break;
+        case 3:
+            avatar.style.backgroundImage = "url('assets/Sophia.png')";
+            nameTag.classList.add('chatter')
+            avatar.classList.add('sophia')
+            nameTag.innerText = "Sophia"
+            break;
     }
 }
 
@@ -122,7 +128,8 @@ let state = {
     day: 1,
     act: 1,
     uteki: 1,
-    chrissy: 1,
+    chrissy: 2,
+    sophia: 1,
     inConvo: false
 };
 
@@ -144,7 +151,7 @@ let mainCharacter = {
 
 let npcUteki = {
     name: "uteki",
-    age: 20,
+    age: 19,
     Allure: 0,
     presence: 0,
     empathy: 0,
@@ -176,6 +183,7 @@ let npcChrissy = {
     tolerance: 0,
     health: 0,
     resolve: 0,
+    currentInteraction: 1,
     currentLocation: "two scoops",
     favorateLocations: ["two scoops", "school"],
     conversed: [],
@@ -297,6 +305,7 @@ let instill = (attacker, defender) => {
 
 // ----------------
 // ------- SOCIAL ACTIONS ------
+// ----------------
 
 const instillEmotion = (target, noun, feeling) => {
     if (cast[target].emotions.length <= 0) {
@@ -346,6 +355,7 @@ const convoOption = (option, character) => {
 let convoStart = (x, index) => {
     if (state[x] === 1) {
         state.inConvo = true
+        console.log(eval(x) + "1")
         charConvoNode(eval(x),index)
     }
 }
@@ -479,27 +489,47 @@ let uteki = [ {
 let sohpia = [ 
     {
         id: 1,
-        text: "",
+        text: "Hello, I'm a test character!",
         sideEffect: () => {},
-        options: []
+        options: [
+            {
+                text: "",
+                nextText: 2
+            }
+        ]
     },
     {
         id: 2,
         text: "",
         sideEffect: () => {},
-        options: []
+        options: [
+            {
+                text: "",
+                nextText: 3
+            }
+        ]
     },
     {
         id: 3,
         text: "",
         sideEffect: () => {},
-        options: []
+        options: [
+            {
+                text: "",
+                nextText: 4
+            }
+        ]
     },
     {
         id: 4,
         text: "",
         sideEffect: () => {},
-        options: []
+        options: [
+            {
+                text: "",
+                nextText: 5
+            }
+        ]
     },
     {
         id: 5,

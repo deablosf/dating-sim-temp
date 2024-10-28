@@ -212,11 +212,14 @@
     font-size: 1.5vw;
 }
 
-/* -----CHARATER VISUAL SETTINGS----- */
+/* -----CHARACTER VISUAL SETTINGS----- */
 
 .chrissy {
-    background-image: url(/assets/chrissy_main.png);
     background-size: 210%;
+}
+
+.sophia {
+    background-size: 150%;
 }
 
 .chrissyUgh {
