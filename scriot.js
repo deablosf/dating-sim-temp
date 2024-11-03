@@ -130,11 +130,12 @@ let state = {
     uteki: 1,
     chrissy: 2,
     sophia: 1,
-    inConvo: false
+    inConvo: false,
+    possibleTalkers: []
 };
 
 let mainCharacter = {
-    name: "Xavi",
+    name: "xavi",
     age: 0,
     Allure: 0,
     presence: 0,
@@ -270,9 +271,11 @@ let relocate = () => {
 let locationSweeper = (local) => {
     if(state.inConvo != true) {
         npcCast.forEach(member => {
-            console.log(member)
-            if (member.currentLocation == local) {
-                console.log(member.name)
+            x = member.name + "1"
+            console.log( x )
+            if (member.currentLocation == local && state.x == 1) {
+                state.possibleTalkers.push(member.name)
+                console.log(state.possibleTalkers)
                 convoStart(member.name, 1)
             }
         })
@@ -486,7 +489,7 @@ let uteki = [ {
 
 ]
 
-let sohpia = [ 
+let sophia = [ 
     {
         id: 1,
         text: "Hello, I'm a test character!",
